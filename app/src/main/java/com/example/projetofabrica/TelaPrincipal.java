@@ -21,7 +21,7 @@ import org.w3c.dom.Text;
 public class TelaPrincipal extends AppCompatActivity {
 
     private TextView nomeUser, emailUser;
-    private Button bt_sair;
+    private Button bt_sair, bt_agenda;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     String usuarioID;
 
@@ -32,6 +32,15 @@ public class TelaPrincipal extends AppCompatActivity {
 
         getSupportActionBar().hide();
         IniciarComponentes();
+
+        bt_agenda.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(TelaPrincipal.this, FormAgenda.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         bt_sair.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,5 +75,6 @@ public class TelaPrincipal extends AppCompatActivity {
         nomeUser = findViewById(R.id.textNomeUser);
         emailUser = findViewById(R.id.textEmailUser);
         bt_sair = findViewById(R.id.bt_sair);
+        bt_agenda = findViewById(R.id.bt_agenda);
     }
 }

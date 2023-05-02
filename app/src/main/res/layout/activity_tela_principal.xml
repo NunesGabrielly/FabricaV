@@ -74,21 +74,24 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/bt_agenda"
-        style="@style/Button"
-        android:layout_marginTop="30dp"
+        style="@style/Button2"
+        android:layout_width="266dp"
+        android:layout_height="114dp"
+        android:layout_marginTop="50dp"
         android:text="@string/agenda"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textEmailUser"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textEmailUser" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/bt_sair"
-        style="@style/Button2"
-        android:layout_marginTop="200dp"
+        style="@style/Button"
+        android:layout_marginTop="150dp"
         android:text="@string/sair"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/bt_agenda" />
+        app:layout_constraintTop_toBottomOf="@id/bt_agenda"
+        app:layout_constraintVertical_bias="0.555" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,4 +6,5 @@
     <string name="cadastrar" translatable="false">Cadastrar</string>
     <string name="sair" translatable="false">SAIR</string>
     <string name="agenda" translatable="false">Agenda</string>
+    <string name="pesquisa">Pesquisar...</string>
 </resources>
