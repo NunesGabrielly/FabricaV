@@ -34,7 +34,7 @@
     <EditText
         android:id="@+id/edit_email"
         style="@style/Edit_Text"
-        android:hint="Email"
+        android:hint="@string/email"
         android:drawableRight="@drawable/ic_email"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="@id/containerComponents"
@@ -44,7 +44,7 @@
     <EditText
         android:id="@+id/edit_senha"
         style="@style/Edit_Text"
-        android:hint="Senha"
+        android:hint="@string/senha"
         android:drawableRight="@drawable/ic_eye"
         android:inputType="numberPassword"
         app:layout_constraintEnd_toEndOf="@id/containerComponents"
@@ -57,8 +57,7 @@
         android:text="@string/entrar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edit_senha"
-        />
+        app:layout_constraintTop_toBottomOf="@id/edit_senha"/>
 
     <ProgressBar
         android:id="@+id/progressbar"

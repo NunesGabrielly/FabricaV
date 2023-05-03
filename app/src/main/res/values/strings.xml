@@ -7,4 +7,16 @@
     <string name="sair" translatable="false">SAIR</string>
     <string name="agenda" translatable="false">Agenda</string>
     <string name="pesquisa">Pesquisar...</string>
+    <string name="visita">Agendar</string>
+    <string name="editar">Editar</string>
+    <string name="deletar">Deletar</string>
+    <string name="visitas_agendadas">Visitas Agendadas</string>
+    <string name="agendamento">Agendamento</string>
+    <string name="nome">Nome</string>
+    <string name="email">Email</string>
+    <string name="senha">Senha</string>
+    <string name="nome_inst">Nome da Instituição</string>
+    <string name="salvar">Salvar</string>
+    <string name="date">Data</string>
+    <string name="hour">hora</string>
 </resources>
