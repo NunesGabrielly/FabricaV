@@ -75,8 +75,6 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/bt_agenda"
         style="@style/Button2"
-        android:layout_width="224dp"
-        android:layout_height="142dp"
         android:layout_marginTop="50dp"
         android:text="@string/agenda"
         app:layout_constraintEnd_toEndOf="parent"
@@ -86,7 +84,7 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/bt_sair"
         style="@style/Button"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="130dp"
         android:text="@string/sair"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
