@@ -18,21 +18,21 @@ public class EditarVisitaActivity extends AppCompatActivity {
 
     private EditText editNomeVisita;
     private Button btnSalvarEdicao;
-
-    private Visit visita;
+    private Visita visita;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editar_visita);
+        getSupportActionBar().hide();
 
-        editNomeVisita = findViewById(R.id.editNomeVisita);
+        editNomeVisita = findViewById(R.id.edit_nome);
         btnSalvarEdicao = findViewById(R.id.btnSalvarEdicao);
 
         visita = getIntent().getParcelableExtra("visit");
 
         if (visita != null) {
-            editNomeVisita.setText(visita.getName());
+            editNomeVisita.setText(visita.getNome());
         }
 
         btnSalvarEdicao.setOnClickListener(new View.OnClickListener() {
@@ -45,10 +45,6 @@ public class EditarVisitaActivity extends AppCompatActivity {
 
     private void salvarEdicao() {
         String novoNome = editNomeVisita.getText().toString();
-
-        // Lógica para salvar a edição da visita no Firebase
-        // Implemente o código necessário para atualizar o nome da visita no Firebase
-
         DatabaseReference visitaRef = FirebaseDatabase.getInstance().getReference().child("visitas").child(visita.getId());
         visitaRef.child("name").setValue(novoNome).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override

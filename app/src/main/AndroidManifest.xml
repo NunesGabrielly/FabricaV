@@ -15,10 +15,10 @@
             android:name=".FormAgenda2"
             android:exported="false" />
         <activity
-            android:name=".FormAgenda"
+            android:name=".EditarVisitaActivity"
             android:exported="false" />
         <activity
-            android:name=".TelaPrincipal"
+            android:name=".FormAgenda"
             android:exported="false" />
         <activity
             android:name=".FormCadastro"

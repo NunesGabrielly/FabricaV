@@ -13,10 +13,10 @@ import java.util.List;
 
 public class VisitaAdapter extends RecyclerView.Adapter<VisitaAdapter.VisitaViewHolder> {
 
-    private List<Visit> visitas;
+    private List<Visita> visitas;
     private OnItemClickListener itemClickListener;
 
-    public VisitaAdapter(List<Visit> visitas) {
+    public VisitaAdapter(List<Visita> visitas) {
         this.visitas = visitas;
     }
 
@@ -33,10 +33,11 @@ public class VisitaAdapter extends RecyclerView.Adapter<VisitaAdapter.VisitaView
 
     @Override
     public void onBindViewHolder(@NonNull VisitaViewHolder holder, int position) {
-        Visit visita = visitas.get(position);
+        Visita visita = visitas.get(position);
 
-        holder.textNomeVisita.setText(visita.getName());
-        holder.textDataHoraVisita.setText(visita.getDateTime());
+        holder.textNomeVisita.setText(visita.getNome());
+        holder.textDataVisita.setText(visita.getData());
+        holder.textHoraVisita.setText(visita.getHora());
 
         holder.btnEditarVisita.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,28 +63,30 @@ public class VisitaAdapter extends RecyclerView.Adapter<VisitaAdapter.VisitaView
         return visitas.size();
     }
 
-    public void setVisitas(List<Visit> visitas) {
+    public void setVisitas(List<Visita> visitas) {
         this.visitas = visitas;
     }
 
     public static class VisitaViewHolder extends RecyclerView.ViewHolder {
         TextView textNomeVisita;
-        TextView textDataHoraVisita;
+        TextView textDataVisita;
+        TextView textHoraVisita;
         Button btnEditarVisita;
         Button btnCancelarVisita;
 
         public VisitaViewHolder(@NonNull View itemView) {
             super(itemView);
             textNomeVisita = itemView.findViewById(R.id.textNomeVisita);
-            textDataHoraVisita = itemView.findViewById(R.id.textDataHoraVisita);
+            textDataVisita = itemView.findViewById(R.id.textDataVisita);
+            textHoraVisita = itemView.findViewById(R.id.textHoraVisita);
             btnEditarVisita = itemView.findViewById(R.id.btnEditarVisita);
             btnCancelarVisita = itemView.findViewById(R.id.btnCancelarVisita);
         }
     }
 
     public interface OnItemClickListener {
-        void onEditClick(Visit visita);
-        void onCancelClick(Visit visita);
+        void onEditClick(Visita visita);
+        void onCancelClick(Visita visita);
     }
 }
 

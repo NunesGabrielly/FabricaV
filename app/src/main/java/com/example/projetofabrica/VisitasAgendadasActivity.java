@@ -32,13 +32,12 @@ public class VisitasAgendadasActivity extends AppCompatActivity implements Visit
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_visitas_agendadas);
+        getSupportActionBar().hide();
 
         recyclerViewVisitas = findViewById(R.id.recyclerViewVisitas);
         recyclerViewVisitas.setLayoutManager(new LinearLayoutManager(this));
 
         visitasRef = FirebaseDatabase.getInstance().getReference().child("visitas");
-
-        // Crie o adapter e defina-o na RecyclerView
         visitaAdapter = new VisitaAdapter(new ArrayList<>());
         visitaAdapter.setOnItemClickListener(this);
         recyclerViewVisitas.setAdapter(visitaAdapter);
@@ -62,9 +61,9 @@ public class VisitasAgendadasActivity extends AppCompatActivity implements Visit
         visitasListener = visitasRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                List<Visit> visitas = new ArrayList<>();
+                List<Visita> visitas = new ArrayList<>();
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    Visit visita = snapshot.getValue(Visit.class);
+                    Visita visita = snapshot.getValue(Visita.class);
                     visitas.add(visita);
                 }
                 visitaAdapter.setVisitas(visitas);
@@ -78,7 +77,7 @@ public class VisitasAgendadasActivity extends AppCompatActivity implements Visit
     }
 
     @Override
-    public void onEditClick(Visit visita) {
+    public void onEditClick(Visita visita) {
         // Lógica para editar a visita
         // Abra a tela de edição da visita, passando os dados da visita
         Intent intent = new Intent(this, EditarVisitaActivity.class);
@@ -87,7 +86,7 @@ public class VisitasAgendadasActivity extends AppCompatActivity implements Visit
     }
 
     @Override
-    public void onCancelClick(Visit visita) {
+    public void onCancelClick(Visita visita) {
         // Lógica para cancelar a visita
         // Remova a visita do Firebase
         DatabaseReference visitaRef = visitasRef.child(visita.getId());

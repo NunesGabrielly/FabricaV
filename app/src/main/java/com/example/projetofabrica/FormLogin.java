@@ -76,7 +76,7 @@ public class FormLogin extends AppCompatActivity {
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            TelaPrincipal();
+                            FormAgenda();
                         }
                     }, 3000);
                 }else {
@@ -104,12 +104,12 @@ public class FormLogin extends AppCompatActivity {
         FirebaseUser usuarioAtual = FirebaseAuth.getInstance().getCurrentUser();
 
         if (usuarioAtual != null){
-            TelaPrincipal();
+            FormAgenda();
         }
     }
 
-    private void TelaPrincipal(){
-        Intent intent = new Intent(FormLogin.this, TelaPrincipal.class);
+    private void FormAgenda(){
+        Intent intent = new Intent(FormLogin.this, FormAgenda.class);
         startActivity(intent);
         finish();
     }
